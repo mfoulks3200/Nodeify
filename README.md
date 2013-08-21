@@ -2,6 +2,10 @@ nodejswebserver
 ===============
 You can see our fancy site over at http://mfoulks3200.github.io/nodejswebserver/
 
+Getting your server up and running
+=================================
+Firstly, if you havent already, download nodejs from nodejs.org. Once that is done, you can unpack the nodejswebserver package and run the index.js file, or, if your on a windows system, run the batch file.
+
 Configuring your server
 =======================
 In the index.js file, this line of code is on the 4th line:
