@@ -23,7 +23,7 @@ function start(route, debug, port) {
 
   http.createServer(onRequest).listen(port);
   console.log("Server has started.");
-  setInterval(upTime(1), 1000);
+  setInterval(upTime(5), 1000);
 }
 
 exports.start = start;
