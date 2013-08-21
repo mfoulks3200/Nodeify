@@ -10,7 +10,6 @@ function upTime(interval){
 }
 
 function start(route, debug, port) {
-setInterval(upTime(1), 1000);
   function onRequest(request, response) {
     var pathname = url.parse(request.url).pathname;
 	if(debug == 1){
@@ -24,6 +23,7 @@ setInterval(upTime(1), 1000);
 
   http.createServer(onRequest).listen(port);
   console.log("Server has started.");
+  setInterval(upTime(1), 1000);
 }
 
 exports.start = start;
