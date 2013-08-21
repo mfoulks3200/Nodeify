@@ -4,7 +4,8 @@ var uptime = 0;
 
 function upTime(interval){
 	uptime++;
-	if(uptime % interval == 0){
+	check = uptime * interval;
+	if(check - Math.floor(check)) == 0){
 		console.log("Uptime: "+uptime);
 	}
 }
