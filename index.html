@@ -30,6 +30,23 @@
         <section id="main-content">
           <h1>
 <a name="nodejswebserver" class="anchor" href="#nodejswebserver"><span class="octicon octicon-link"></span></a>nodejswebserver</h1>
+
+<p>You can see our fancy site over at <a href="http://mfoulks3200.github.io/nodejswebserver/">http://mfoulks3200.github.io/nodejswebserver/</a></p>
+
+<h1>
+<a name="getting-your-server-up-and-running" class="anchor" href="#getting-your-server-up-and-running"><span class="octicon octicon-link"></span></a>Getting your server up and running</h1>
+
+<p>Firstly, if you havent already, download nodejs from nodejs.org. Once that is done, you can unpack the nodejswebserver package and run the index.js file, or, if your on a windows system, run the batch file.</p>
+
+<h1>
+<a name="configuring-your-server" class="anchor" href="#configuring-your-server"><span class="octicon octicon-link"></span></a>Configuring your server</h1>
+
+<p>In the index.js file, this line of code is on the 4th line:
+server.start(router.route,1, 8888);
+This line of code kicks off the server
+The first paramiter sends the request url to router.js to be pharsed
+The 2nd paramiter is a debug tool, when set to 1 it will print out every request made as it happends along with error codes (set this to 0 to turn off (on by default))
+The last paramiter is the port for the server to run off of</p>
         </section>
 
         <aside id="sidebar">
