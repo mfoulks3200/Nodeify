@@ -24,7 +24,6 @@ function route(pathname, debug) {
 	if(debug == 1){
 		log("Routing request for C:/nodejswebserver/www" + pathname);
 	}
-	return response.write("Hello World");
 }
 
 exports.route = route;
