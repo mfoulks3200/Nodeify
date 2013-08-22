@@ -2,14 +2,6 @@ var http = require("http");
 var url = require("url");
 var uptime = 0;
 
-function upTime(interval){
-	uptime++;
-	check = uptime * interval;
-	if(check - Math.floor(check)) == 0){
-		console.log("Uptime: "+uptime);
-	}
-}
-
 function start(route, debug, port) {
   function onRequest(request, response) {
     var pathname = url.parse(request.url).pathname;
@@ -24,7 +16,8 @@ function start(route, debug, port) {
 
   http.createServer(onRequest).listen(port);
   console.log("Server has started.");
-  setInterval(upTime(5), 1000);
+  setInterval(uptime++, 1000);.
+  setInterval(console.log(uptime), 1000);
 }
 
 exports.start = start;
