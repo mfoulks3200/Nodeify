@@ -8,10 +8,13 @@ function getTime(){
 	var h=today.getHours();
 	var m=today.getMinutes();
 	var s=today.getSeconds();
+	var mo=today.getMonth()+1;
+	var d=today.getDate();
+	var y=today.getFullYear();
 	// add a zero in front of numbers<10
 	m=checkTime(m);
 	s=checkTime(s);
-	return h+":"+m+":"+s;
+	return h+":"+m+":"+s+" "+mo+"/"+d+"/"+y;
 }
 
 function log(message){
@@ -31,7 +34,7 @@ function start(debug, port) {
 		if(debug == 1){
 			log("Request for " +request+ " received.");
 		}
-		response.writeHead(200, {"Content-Type": "text/plain"});
+		response.writeHead(200, {"Content-Type": "text/html"});
 		response.write("Hello World");
 		response.end();
 	}
