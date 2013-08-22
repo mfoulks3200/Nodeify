@@ -29,7 +29,7 @@ function checkTime(i){
 function start(debug, port) {
   function onRequest(request, response) {
 		if(debug == 1){
-			log("Request for " + "received.");
+			log("Request for " +request+ " received.");
 		}
 		response.writeHead(200, {"Content-Type": "text/plain"});
 		response.write("Hello World");
