@@ -16,7 +16,7 @@ function start(route, debug, port) {
 
   http.createServer(onRequest).listen(port);
   console.log("Server has started.");
-  setInterval(uptime++, 1000);.
+  setInterval(uptime++, 1000);
   setInterval(console.log(uptime), 1000);
 }
 
