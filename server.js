@@ -26,7 +26,6 @@ function checkTime(i){
 
 function start(debug, port) {
   function onRequest(request, response) {
-    var pathname = url.parse(request.url).pathname;
 	if(debug == 1){
 		log("Request for " + pathname + " received.");
 	}
