@@ -31,7 +31,7 @@ function start(debug, port) {
 		log("Request for " + pathname + " received.");
 	}
 		response.writeHead(200, {"Content-Type": "text/plain"});
-		response.write("Hello World");
+		response.write(fs.readFile('/www/index.html'));
 		response.end();
 	}
 
