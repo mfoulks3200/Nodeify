@@ -24,13 +24,12 @@ function checkTime(i){
 	return i;
 }
 
-function start(route, debug, port) {
+function start(debug, port) {
   function onRequest(request, response) {
     var pathname = url.parse(request.url).pathname;
 	if(debug == 1){
 		log("Request for " + pathname + " received.");
 	}
-		route(pathname, debug);
 		response.writeHead(200, {"Content-Type": "text/plain"});
 		response.write("Hello World");
 		response.end();
