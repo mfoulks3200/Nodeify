@@ -1,5 +1,6 @@
 var http = require("http");
 var url = require("url");
+var fs = require("fs");
 var uptime = 0;
 
 function getTime(){
@@ -15,6 +16,7 @@ function getTime(){
 
 function log(message){
 	console.log("["+getTime()+"] "+message);
+	fs.appendFile("log.txt", "["+getTime()+"] "+message+"\r\n");
 }
 
 function checkTime(i){
@@ -26,11 +28,11 @@ function checkTime(i){
 
 function start(debug, port) {
   function onRequest(request, response) {
-	if(debug == 1){
-		log("Request for " + pathname + " received.");
-	}
+		if(debug == 1){
+			log("Request for " + "received.");
+		}
 		response.writeHead(200, {"Content-Type": "text/plain"});
-		response.write(fs.readFile('/www/index.html'));
+		response.write("Hello World");
 		response.end();
 	}
 
