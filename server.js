@@ -58,17 +58,19 @@ function log(message){
 }
 
 function command(){
-	while(true){
-		rl.question(">", function(answer) {
-			if(answer == "stop"){
-				log("Server Gracefully Exited");
-				rl.close();
-				process.exit(code=0)
-			}
+	rl.question(function(answer) {
+		if(answer == "stop"){
+			log("Server has stopped listening");
+			log("Server has stopped");
+			log("Server Gracefully Exited");
+			rl.close();
+			process.exit(code=0)
+		}else{
+			log(answer + " is nota valid command");
 		}
-		});
+		command();
+	});
 	}
-}
 
 function checkTime(i){
 	if (i<10){
