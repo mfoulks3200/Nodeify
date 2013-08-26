@@ -51,7 +51,7 @@ function message(message, color){
 }
 
 function log(message1){
-	message("\u001b[36m [Log] \u001b[37m"+message1, )
+	message("\u001b[36m [Log] \u001b[37m"+message1);
 }
 
 function checkTime(i){
