@@ -63,6 +63,7 @@ function command(){
 			log("Server has stopped listening");
 			log("Server has stopped");
 			log("Server Gracefully Exited");
+			log("Press any key to continue");
 			rl.close();
 			process.exit(code=0)
 		}else{
