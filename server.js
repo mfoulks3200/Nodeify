@@ -17,7 +17,7 @@ function getTime(){
 	return h+":"+m+":"+s+" "+mo+"/"+d+"/"+y;
 }
 
-function log(message, color){
+function message(message, color){
 	var red, blue, reset;
 	red   = '\u001b[31m';
 	green  = '\u001b[32m';
@@ -50,6 +50,10 @@ function log(message, color){
 	fs.appendFile("log.txt", "["+getTime()+"] "+message+"\r\n");
 }
 
+function log(message1){
+	message("\u001b[36m [Log] \u001b[37m"+message1, )
+}
+
 function checkTime(i){
 	if (i<10){
 		i="0" + i;
@@ -58,10 +62,10 @@ function checkTime(i){
 }
 
 function start(debug, port) {
-	log("Server has started.", "white");
+	log("Server has started.");
   function onRequest(request, response) {
 		if(debug == 1){
-			log("Request for " +request+ " received.", "white");
+			log("Request for " +request+ " received.");
 		}
 		response.writeHead(200, {"Content-Type": "text/html"});
 		response.write("Hello World");
@@ -69,10 +73,10 @@ function start(debug, port) {
 	}
 
 	http.createServer(onRequest).listen(port);
-	log("Started Listening", "white");
+	log("Started Listening");
 	if(debug == 1){
 		setInterval(function(){uptime++;}, 36000000);
-		setInterval(function(){log("Uptime (Hours): "+uptime, "white");}, 36000000);
+		setInterval(function(){log("Uptime (Hours): "+uptime);}, 36000000);
 	}
 }
 
