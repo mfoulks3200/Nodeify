@@ -59,14 +59,15 @@ function log(message){
 
 function command(){
 	while(true){
-	rl.question(">", function(answer) {
-		if(answer == "stop"){
-			log("Server Gracefully Exited");
-			rl.close();
-			process.exit(code=0)
+		rl.question(">", function(answer) {
+			if(answer == "stop"){
+				log("Server Gracefully Exited");
+				rl.close();
+				process.exit(code=0)
+			}
 		}
+		});
 	}
-	});
 }
 
 function checkTime(i){
