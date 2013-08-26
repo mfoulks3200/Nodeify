@@ -30,7 +30,7 @@ function checkTime(i){
 }
 
 function start(debug, port) {
-	log("Started Listening");
+	log("Server has started.");
   function onRequest(request, response) {
 		if(debug == 1){
 			log("Request for " +request+ " received.");
@@ -41,7 +41,7 @@ function start(debug, port) {
 	}
 
 	http.createServer(onRequest).listen(port);
-	log("Server has started.");
+	log("Started Listening");
 	if(debug == 1){
 		setInterval(function(){uptime++;}, 36000000);
 		setInterval(function(){log("Uptime (Hours): "+uptime);}, 36000000);

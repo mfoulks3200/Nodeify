@@ -5,3 +5,5 @@
 [22:54:20 8/21/2013] Request for [object Object] received.
 [22:54:20 8/21/2013] Request for [object Object] received.
 [8:54:17 8/22/2013] Uptime (Hours): 1
+[20:10:05 8/25/2013] Started Listening
+[20:10:05 8/25/2013] Server has started.
