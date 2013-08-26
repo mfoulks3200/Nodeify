@@ -58,7 +58,7 @@ function log(message){
 }
 
 function command(){
-	rl.question(function(answer) {
+	rl.question("",function(answer) {
 		if(answer == "stop"){
 			log("Server has stopped listening");
 			log("Server has stopped");
@@ -66,11 +66,11 @@ function command(){
 			rl.close();
 			process.exit(code=0)
 		}else{
-			log(answer + " is nota valid command");
+			log(answer + " is not a valid command");
 		}
 		command();
 	});
-	}
+}
 
 function checkTime(i){
 	if (i<10){
