@@ -1,0 +1,2 @@
+[20:39:51 8/25/2013] [Log] Server has started.
+[20:39:51 8/25/2013] [Log] Started Listening

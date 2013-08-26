@@ -1,7 +1,13 @@
 var http = require("http");
 var url = require("url");
 var fs = require("fs");
+var readline = require('readline');
 var uptime = 0;
+
+var rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
 function getTime(){
 	var today=new Date();
@@ -51,6 +57,18 @@ function log(message){
 	fs.appendFile("log.txt", "["+getTime()+"] [Log] "+message+"\r\n");
 }
 
+function command(){
+	while(true){
+	rl.question(">", function(answer) {
+		if(answer == "stop"){
+			log("Server Gracefully Exited");
+			rl.close();
+			process.exit(code=0)
+		}
+	}
+	});
+}
+
 function checkTime(i){
 	if (i<10){
 		i="0" + i;
@@ -71,6 +89,7 @@ function start(debug, port) {
 
 	http.createServer(onRequest).listen(port);
 	log("Started Listening");
+	command();
 	if(debug == 1){
 		setInterval(function(){uptime++;}, 36000000);
 		setInterval(function(){log("Uptime (Hours): "+uptime);}, 36000000);
