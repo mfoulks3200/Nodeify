@@ -17,7 +17,7 @@ function getTime(){
 	return h+":"+m+":"+s+" "+mo+"/"+d+"/"+y;
 }
 
-function message(message, color){
+function log(message){
 	var red, blue, reset;
 	red   = '\u001b[31m';
 	green  = '\u001b[32m';
@@ -26,32 +26,29 @@ function message(message, color){
 	magenta   = '\u001b[35m';
 	cyan  = '\u001b[36m';
 	white   = '\u001b[37m';
+	var color = "white";
 	if(color == "red"){
-		console.log(cyan + "["+getTime()+"] "+ red +message);
+		console.log(cyan + "["+getTime()+"] [Log] " + red +message);
 	}
 	if(color == "green"){
-		console.log(cyan + "["+getTime()+"] "+ green +message);
+		console.log(cyan + "["+getTime()+"] [Log] "+ green +message);
 	}
 	if(color == "yellow"){
-		console.log(cyan + "["+getTime()+"] "+ yellow +message);
+		console.log(cyan + "["+getTime()+"] [Log] "+ yellow +message);
 	}
 	if(color == "blue"){
-		console.log(cyan + "["+getTime()+"] "+ blue +message);
+		console.log(cyan + "["+getTime()+"] [Log] "+ blue +message);
 	}
 	if(color == "magenta"){
-		console.log(cyan + "["+getTime()+"] "+ magenta +message);
+		console.log(cyan + "["+getTime()+"] [Log] "+ magenta +message);
 	}
 	if(color == "cyan"){
-		console.log(cyan + "["+getTime()+"] "+ cyan +message);
+		console.log(cyan + "["+getTime()+"] [Log] "+ cyan +message);
 	}
 	if(color == "white"){
-		console.log(cyan + "["+getTime()+"] "+ white +message);
+		console.log(cyan + "["+getTime()+"] [Log] "+ white +message);
 	}
-	fs.appendFile("log.txt", "["+getTime()+"] "+message+"\r\n");
-}
-
-function log(message1){
-	message("\u001b[36m [Log] \u001b[37m"+message1);
+	fs.appendFile("log.txt", "["+getTime()+"] [Log] "+message+"\r\n");
 }
 
 function checkTime(i){

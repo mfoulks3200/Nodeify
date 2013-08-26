@@ -17,3 +17,7 @@
 [20:15:49 8/25/2013] Started Listening
 [20:21:31 8/25/2013] Server has started.
 [20:21:31 8/25/2013] Started Listening
+[20:24:23 8/25/2013] [36m [Log] [37mServer has started.
+[20:24:23 8/25/2013] [36m [Log] [37mStarted Listening
+[20:24:42 8/25/2013] [36m [Log] [37mServer has started.
+[20:24:42 8/25/2013] [36m [Log] [37mStarted Listening
