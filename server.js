@@ -30,6 +30,7 @@ function checkTime(i){
 }
 
 function start(debug, port) {
+	log("Started Listening");
   function onRequest(request, response) {
 		if(debug == 1){
 			log("Request for " +request+ " received.");
