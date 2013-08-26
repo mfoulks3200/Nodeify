@@ -20,7 +20,7 @@ function getTime(){
 function log(message){
 	var red, blue, reset;
 	red   = '\u001b[31m';
-	blue  = '\u001b[34m';
+	blue  = '\u001b[36m';
 	reset = '\u001b[0m';
 	console.log(blue + "["+getTime()+"] "+ reset +message);
 	fs.appendFile("log.txt", "["+getTime()+"] "+message+"\r\n");

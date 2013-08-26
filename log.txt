@@ -11,3 +11,7 @@
 [20:10:43 8/25/2013] Started Listening
 [20:10:50 8/25/2013] Request for [object Object] received.
 [20:10:50 8/25/2013] Request for [object Object] received.
+[20:13:43 8/25/2013] Server has started.
+[20:13:43 8/25/2013] Started Listening
+[20:15:49 8/25/2013] Server has started.
+[20:15:49 8/25/2013] Started Listening
