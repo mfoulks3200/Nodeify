@@ -37,7 +37,7 @@ function log(message){
 }
 
 function warn(message){
-	console.log(cyan + "["+getTime()+"]" + red + "[Warn] "+ white +message);
+	console.log(cyan + "["+getTime()+"]" + red + " [Warn] "+ white +message);
 	fs.appendFile("log.txt", "["+getTime()+"] [Warn] "+message+"\r\n");
 }
 
