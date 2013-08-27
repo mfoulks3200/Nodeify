@@ -1,5 +1,4 @@
 var fs = require("fs");
-var commands = require("./commands/commands");
 var red, green, yellow, blue, magenta, cyan, white;
 red   = '\u001b[31m';
 green  = '\u001b[32m';

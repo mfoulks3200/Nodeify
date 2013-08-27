@@ -1,6 +1,5 @@
-var log = require('./log');
+var log = require("./log");
 var readline = require('readline');
-
 var rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -22,12 +21,16 @@ function help(){
 function listen(){
 	rl.question("",function(answer) {
 		log.log("Running Command: " + answer);
-		try{
-			window[answer]();
-		}catch{
-			log.log("Command: "+ answer +" is not a command");
+		if(answer == "stop"){
+			stop();
+		}else if(answer == "help"){
+			help();
+		}else{
+			log.warn("Command: " + answer + " is not a command");
 		}
-		rl.close();
+		rl.close;
 		listen();
 	});
 }
+
+exports.listen = listen;
