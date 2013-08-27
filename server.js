@@ -3,6 +3,14 @@ var url = require("url");
 var fs = require("fs");
 var readline = require('readline');
 var uptime = 0;
+var red, green, yellow, blue, magenta, cyan, white;
+red   = '\u001b[31m';
+green  = '\u001b[32m';
+yellow   = '\u001b[33m';
+blue  = '\u001b[34m';
+magenta   = '\u001b[35m';
+cyan  = '\u001b[36m';
+white   = '\u001b[37m';
 
 var rl = readline.createInterface({
   input: process.stdin,
@@ -24,45 +32,21 @@ function getTime(){
 }
 
 function log(message){
-	var red, blue, reset;
-	red   = '\u001b[31m';
-	green  = '\u001b[32m';
-	yellow   = '\u001b[33m';
-	blue  = '\u001b[34m';
-	magenta   = '\u001b[35m';
-	cyan  = '\u001b[36m';
-	white   = '\u001b[37m';
-	var color = "white";
-	if(color == "red"){
-		console.log(cyan + "["+getTime()+"] [Log] " + red +message);
-	}
-	if(color == "green"){
-		console.log(cyan + "["+getTime()+"] [Log] "+ green +message);
-	}
-	if(color == "yellow"){
-		console.log(cyan + "["+getTime()+"] [Log] "+ yellow +message);
-	}
-	if(color == "blue"){
-		console.log(cyan + "["+getTime()+"] [Log] "+ blue +message);
-	}
-	if(color == "magenta"){
-		console.log(cyan + "["+getTime()+"] [Log] "+ magenta +message);
-	}
-	if(color == "cyan"){
-		console.log(cyan + "["+getTime()+"] [Log] "+ cyan +message);
-	}
-	if(color == "white"){
-		console.log(cyan + "["+getTime()+"] [Log] "+ white +message);
-	}
+	console.log(cyan + "["+getTime()+"] [Log] "+ white +message);
 	fs.appendFile("log.txt", "["+getTime()+"] [Log] "+message+"\r\n");
+}
+
+function warn(message){
+	console.log(cyan + "["+getTime()+"]" + red + "[Warn] "+ white +message);
+	fs.appendFile("log.txt", "["+getTime()+"] [Warn] "+message+"\r\n");
 }
 
 function command(){
 	rl.question("",function(answer) {
 		if(answer == "stop"){
-			log("Server has stopped listening");
-			log("Server has stopped");
-			log("Server Gracefully Exited");
+			warn("Server has stopped listening");
+			warn("Server has stopped");
+			warn("Server Gracefully Exited");
 			log("Press any key to continue");
 			rl.close();
 			process.exit(code=0)
