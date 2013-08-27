@@ -41,17 +41,27 @@ function warn(message){
 	fs.appendFile("log.txt", "["+getTime()+"] [Warn] "+message+"\r\n");
 }
 
+function help(message){
+	console.log(cyan + "["+getTime()+"]" + yellow + " [Help] "+ white +message);
+	fs.appendFile("log.txt", "["+getTime()+"] [Help] "+message+"\r\n");
+}
+
 function command(){
 	rl.question("",function(answer) {
 		if(answer == "stop"){
+			log("Running Command: stop");
 			warn("Server has stopped listening");
 			warn("Server has stopped");
 			warn("Server Gracefully Exited");
 			log("Press any key to continue");
 			rl.close();
-			process.exit(code=0)
-		}else{
-			log(answer + " is not a valid command");
+			process.exit(code=0);
+		}
+		if(answer == "help"){
+			help("You can run the following commands: stop");
+		}
+		if(answer !=== "help" || answer !=== "stop"){
+			log("Command: "answer + " is not a valid command");
 		}
 		command();
 	});
