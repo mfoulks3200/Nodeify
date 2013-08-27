@@ -2,6 +2,7 @@ var http = require("http");
 var url = require("url");
 var fs = require("fs");
 var readline = require('readline');
+var commands = require('commands');
 var uptime = 0;
 var red, green, yellow, blue, magenta, cyan, white;
 red   = '\u001b[31m';
@@ -46,26 +47,7 @@ function help(message){
 	fs.appendFile("log.txt", "["+getTime()+"] [Help] "+message+"\r\n");
 }
 
-function command(){
-	rl.question("",function(answer) {
-		if(answer == "stop"){
-			log("Running Command: stop");
-			warn("Server has stopped listening");
-			warn("Server has stopped");
-			warn("Server Gracefully Exited");
-			log("Press any key to continue");
-			rl.close();
-			process.exit(code=0);
-		}
-		if(answer == "help"){
-			help("You can run the following commands: stop");
-		}
-		if(answer !=== "help" || answer !=== "stop"){
-			log("Command: "answer + " is not a valid command");
-		}
-		command();
-	});
-}
+commands.listen();
 
 function checkTime(i){
 	if (i<10){
