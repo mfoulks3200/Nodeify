@@ -2,7 +2,7 @@ var http = require("http");
 var url = require("url");
 var fs = require("fs");
 var readline = require('readline');
-var commands = require('commands');
+var commands = require('commands/commands.js');
 var uptime = 0;
 var red, green, yellow, blue, magenta, cyan, white;
 red   = '\u001b[31m';
