@@ -29,7 +29,7 @@ function start(port) {
 					response.wireHead(500, {"Content-Type": "text/plain"});  
 					response.write(err + "\n");  
 					response.end(); 
-					log.log("Request for " + fname + " returned with error code " + err);
+					log.warn("Request for " + fname + " returned with error code " + err);
 					return;  
 				}  
 				
@@ -42,7 +42,7 @@ function start(port) {
 			response.writeHead(404, {"Content-Type": "text/html"});
 			response.write("Error 404: File not Found");
 			response.end();
-			log.log("Request for " + fname + " could not be located");
+			log.warn("Request for " + fname + " could not be located");
 		  }
 		});
 	}
