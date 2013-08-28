@@ -1,5 +1,10 @@
 module.exports = {
-	html: function(input){
-		return input;
+	
+	check: function(file,input){
+		if(input == ".php"){
+			return file+"php";
+		}else{
+			return file+"nothing";
+		}
 	}
 };

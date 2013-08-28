@@ -8,9 +8,8 @@ Firstly, if you havent already, download nodejs from nodejs.org. Once that is do
 
 Configuring your server
 =======================
-In the index.js file, this line of code is on the 4th line:
-server.start(router.route,1, 8888);
-This line of code kicks off the server
-The first paramiter sends the request url to router.js to be pharsed
-The 2nd paramiter is a debug tool, when set to 1 it will print out every request made as it happends along with error codes (set this to 0 to turn off (on by default))
-The last paramiter is the port for the server to run off of
+There are instructions in the config.js file on configuring your server
+
+Modding Your Requests
+====================
+In the mod.js file, you can make individual functions for each file extension, the request handler will then pass all code going to that page through your function for filtering, or custom code on a per page basis.
