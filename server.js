@@ -6,7 +6,7 @@ path = require('path');
 var commands = require('./commands');
 var uptime = 0;
 
-function start(debug, port) {
+function start(port) {
 	log.log("Server has started");
 	var ports = port;
 	exports.ports = ports;
@@ -21,9 +21,7 @@ function start(debug, port) {
 		}
 		file = "www"+file
 		fname = file.substring(4);
-		if(debug == 1){
-			log.log("Request for " + file.substring(4) + " received");
-		}
+		log.log("Request for " + file.substring(4) + " received");
 		fs.exists(file, function(exists) {
 		  if (exists) {
 			fs.readFile(file, "binary", function(err, file) {  
@@ -52,10 +50,8 @@ function start(debug, port) {
 	http.createServer(onRequest).listen(port);
 	log.log("Started Listening");
 	commands.listen();
-	if(debug == 1){
-		setInterval(function(){uptime++;}, 36000000);
-		setInterval(function(){log.log("Uptime (Hours): "+uptime);}, 36000000);
-	}
+	setInterval(function(){uptime++;}, 36000000);
+	setInterval(function(){log.log("Uptime (Hours): "+uptime);}, 36000000);
 }
 
 exports.start = start;
