@@ -36,3 +36,9 @@
 [21:09:03 8/25/2013] [Log] Request for [object Object] received.
 [21:09:03 8/25/2013] [Log] Request for [object Object] received.
 [21:09:06 8/25/2013] [Log] tes is not a valid command
+[21:49:55 8/27/2013] [Log] Server has started
+[21:49:55 8/27/2013] [Log] Started Listening
+[21:50:02 8/27/2013] [Log] Request for index.html received
+[21:50:02 8/27/2013] [Log] Request for index.html fufilled
+[21:50:02 8/27/2013] [Log] Request for favicon.ico received
+[21:50:02 8/27/2013] [Warn] Request for favicon.ico could not be located

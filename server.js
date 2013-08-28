@@ -2,7 +2,8 @@ var http = require("http");
 var log = require("./log");
 var fs = require('fs');
 var url = require("url");
-path = require('path');
+var path = require('path');
+var mod = require('mod');
 var commands = require('./commands');
 var uptime = 0;
 

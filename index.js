@@ -1,2 +1,3 @@
 var server = require("./server");
-server.start(8888);
+var config = require("./config");
+server.start(config.port);
