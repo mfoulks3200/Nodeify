@@ -34,7 +34,7 @@ function start(port) {
 					return;  
 				}
 				response.writeHead(200);  
-				response.write(mod.check(file, file.substring(file.length-4, file.length)), "binary");  
+				response.write(mod.check(file, fname.substring(fname.length-4, fname.length)), "binary");  
 				response.end();  
 				log.log("Request for " + fname + " fufilled");
 			});  
