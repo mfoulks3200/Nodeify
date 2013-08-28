@@ -21,7 +21,7 @@ function start(debug, port) {
 		}
 		file = "www"+file
 		if(debug == 1){
-			log.log("Request for " + file.substring(4) + " received.");
+			log.log("Request for " + file.substring(4) + " received");
 		}
 		fs.exists(file, function(exists) {
 		  if (exists) {
@@ -29,18 +29,21 @@ function start(debug, port) {
 				if(err) {  
 					response.wireHead(500, {"Content-Type": "text/plain"});  
 					response.write(err + "\n");  
-					response.end();  
+					response.end(); 
+					log.log("Request for " + file.substring(4) + " returned with error code " + err);
 					return;  
 				}  
-
+				
 				response.writeHead(200);  
 				response.write(file, "binary");  
 				response.end();  
+				log.log("Request for " + file.substring(4) + " fufilled");
 			});  
 		  } else {
 			response.writeHead(404, {"Content-Type": "text/html"});
 			response.write("Error 404: File not Found");
 			response.end();
+			log.log("Request for " + file.substring(4) + " could not be located");
 		  }
 		});
 	}
