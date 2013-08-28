@@ -105,3 +105,9 @@
 [6:03:52 8/28/2013] [Log] Started Listening
 [6:03:55 8/28/2013] [Log] Request for index.php received
 [6:03:55 8/28/2013] [Log] Request for index.php fufilled
+[15:28:32 8/28/2013] [Log] Server has started
+[15:28:32 8/28/2013] [Log] Started Listening
+[15:28:34 8/28/2013] [Log] Request for index.php received
+[15:28:34 8/28/2013] [Log] Request for index.php fufilled
+[15:28:35 8/28/2013] [Log] Request for index.php received
+[15:28:35 8/28/2013] [Log] Request for index.php fufilled
