@@ -20,6 +20,7 @@ function start(debug, port) {
 			file = file + "index.html";
 		}
 		file = "www"+file
+		fname = file.substring(4);
 		if(debug == 1){
 			log.log("Request for " + file.substring(4) + " received");
 		}
@@ -30,20 +31,20 @@ function start(debug, port) {
 					response.wireHead(500, {"Content-Type": "text/plain"});  
 					response.write(err + "\n");  
 					response.end(); 
-					log.log("Request for " + file.substring(4) + " returned with error code " + err);
+					log.log("Request for " + fname + " returned with error code " + err);
 					return;  
 				}  
 				
 				response.writeHead(200);  
 				response.write(file, "binary");  
 				response.end();  
-				log.log("Request for " + file.substring(4) + " fufilled");
+				log.log("Request for " + fname + " fufilled");
 			});  
 		  } else {
 			response.writeHead(404, {"Content-Type": "text/html"});
 			response.write("Error 404: File not Found");
 			response.end();
-			log.log("Request for " + file.substring(4) + " could not be located");
+			log.log("Request for " + fname + " could not be located");
 		  }
 		});
 	}
