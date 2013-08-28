@@ -3,7 +3,7 @@ var log = require("./log");
 var fs = require('fs');
 var url = require("url");
 var path = require('path');
-var mod = require('mod');
+var mod = require('./mod');
 var commands = require('./commands');
 var uptime = 0;
 
@@ -32,10 +32,9 @@ function start(port) {
 					response.end(); 
 					log.warn("Request for " + fname + " returned with error code " + err);
 					return;  
-				}  
-				
+				}
 				response.writeHead(200);  
-				response.write(file, "binary");  
+				response.write(mod.check(file, file.substring(file.length-4, file.length)), "binary");  
 				response.end();  
 				log.log("Request for " + fname + " fufilled");
 			});  
