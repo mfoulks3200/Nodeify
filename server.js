@@ -7,7 +7,9 @@ var commands = require('./commands');
 var uptime = 0;
 
 function start(debug, port) {
-	log.log("Server has started.");
+	log.log("Server has started");
+	var ports = port;
+	exports.ports = ports;
   function onRequest(request, response) {
 		var file = null;
 		try {
@@ -23,9 +25,18 @@ function start(debug, port) {
 		}
 		fs.exists(file, function(exists) {
 		  if (exists) {
-			response.writeHead(200, {"Content-Type": "text/html"});
-			response.write("Hello World");
-			response.end();
+			fs.readFile(file, "binary", function(err, file) {  
+				if(err) {  
+					response.wireHead(500, {"Content-Type": "text/plain"});  
+					response.write(err + "\n");  
+					response.end();  
+					return;  
+				}  
+
+				response.writeHead(200);  
+				response.write(file, "binary");  
+				response.end();  
+			});  
 		  } else {
 			response.writeHead(404, {"Content-Type": "text/html"});
 			response.write("Error 404: File not Found");
