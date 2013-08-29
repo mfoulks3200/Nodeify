@@ -1,7 +1,10 @@
 var log = require("./log");
 var server = require("./server");
 var readline = require('readline');
-var rl = readline.createInterface({
+var sys = require('sys');
+var fs = require('fs')
+var child_process = require('child_process');
+rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
@@ -33,6 +36,19 @@ function stop(){
 	log.log("Press any key to continue");
 	rl.close();
 	process.exit(code=0);
+}
+
+function config(variable, value){
+	fs.readFile("config.js", 'utf8', function (err,data) {
+	  if (err) {
+		return log.warn(err);
+	  }
+	  var result = data.replace(/string to be replaced/g, 'replacement');
+
+	  fs.writeFile("config.js", result, 'utf8', function (err) {
+		 if (err) return log.warn(err);
+	  });
+	});
 }
 
 function help(){
