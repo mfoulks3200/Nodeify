@@ -1625,3 +1625,16 @@
 [20:35:43 8/28/2013] [Log] Started Listening
 [20:35:50 8/28/2013] [Log] Running Command: config port
 [20:35:50 8/28/2013] [Help] You must input a new value
+[20:36:34 8/28/2013] [Log] Server has started
+[20:36:34 8/28/2013] [Log] Started Listening
+[20:36:38 8/28/2013] [Log] Running Command: config port 80
+[20:36:38 8/28/2013] [Log] Changed port to 80
+[20:36:38 8/28/2013] [Log] Your changes will not take effect untill you restart the server
+[20:37:18 8/28/2013] [Log] Server has started
+[20:37:18 8/28/2013] [Log] Started Listening
+[20:37:24 8/28/2013] [Log] Running Command: config port 80
+[20:38:28 8/28/2013] [Log] Server has started
+[20:38:28 8/28/2013] [Log] Started Listening
+[20:38:32 8/28/2013] [Log] Running Command: config port 80
+[20:38:32 8/28/2013] [Log] Changed port to 80
+[20:38:32 8/28/2013] [Log] Your changes will not take effect untill you restart the server, type stop to stop

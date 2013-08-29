@@ -53,7 +53,7 @@ function configs(variable, value){
 			 if (err) return log.warn(err);
 		  });
 		  log.log("Changed "+variable+" to "+value);
-		  log.log("Your changes will not take effect untill you restart the server");
+		  log.log("Your changes will not take effect untill you restart the server, type stop to stop");
 		});
 }
 
