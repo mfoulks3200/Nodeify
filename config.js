@@ -10,5 +10,5 @@ var port = 80;
 exports.port = port;
 
 //the number of seconds to wait before automaticlly reporting the uptime
-var uptime = 3600;
+var uptime = 0;
 exports.uptime = uptime;
