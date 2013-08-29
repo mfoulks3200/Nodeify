@@ -1,6 +1,6 @@
 Nodeify
 ===============
-You can see our fancy site over at http://mfoulks3200.github.io/Nodeify
+You can see our fancy site over at http://mfoulks3200.github.io/Nodeify.
 
 Getting your server up and running
 =================================
