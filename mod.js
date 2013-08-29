@@ -2,9 +2,9 @@ module.exports = {
 	
 	check: function(file,input){
 		if(input == ".php"){
-			return file+"php";
+			return file;
 		}else{
-			return file+"nothing";
+			return file;
 		}
 	}
 };
