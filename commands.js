@@ -57,7 +57,7 @@ function configs(variable, value){
 }
 
 function help(){
-	log.help("You can run the following commands: stop, help, getip, config, license, credits");
+	log.help("You can run the following commands: stop, help, getip, config, license, credits, uptime");
 }
 
 function license(){
