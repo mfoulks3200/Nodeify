@@ -22,7 +22,7 @@ function start(port) {
 		}
 		file = "www"+file
 		fname = file.substring(4);
-		log.log("Request for " + file.substring(4) + " received");
+		log.log("Request for " + file.substring(4) + " received from "+request.connection.remoteAddress);
 		fs.exists(file, function(exists) {
 		  if (exists) {
 			fs.readFile(file, "binary", function(err, file) {  
@@ -30,19 +30,19 @@ function start(port) {
 					response.wireHead(500, {"Content-Type": "text/plain"});  
 					response.write(err + "\n");  
 					response.end(); 
-					log.warn("Request for " + fname + " returned with error code " + err);
+					log.warn("Request for " + fname + " from "+request.connection.remoteAddress+" returned with error code " + err);
 					return;  
 				}
 				response.writeHead(200);  
 				response.write(mod.check(file, fname.substring(fname.length-4, fname.length)), "binary");  
 				response.end();  
-				log.log("Request for " + fname + " fufilled");
+				log.log("Request for " + fname + " from "+request.connection.remoteAddress+" fufilled");
 			});  
 		  } else {
 			response.writeHead(404, {"Content-Type": "text/html"});
 			response.write("Error 404: File not Found");
 			response.end();
-			log.warn("Request for " + fname + " could not be located");
+			log.warn("Request for " + fname + " from "+request.connection.remoteAddress+" could not be located");
 		  }
 		});
 	}
