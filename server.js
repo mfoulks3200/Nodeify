@@ -52,7 +52,7 @@ function start(port) {
 	log.log("Started Listening");
 	commands.listen();
 	setInterval(function(){uptime++;}, 1000);
-	setInterval(getUptime, config.uptime);
+	if(config.uptime == 0){}else{setInterval(getUptime, config.uptime);}
 }
 
 function getUptime(){
