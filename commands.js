@@ -42,7 +42,6 @@ function stop(){
 function configs(variable, value){
 	if(variable == null){log.help("Config 'Option Name' 'New Value'");return false;}else{}
 	if(value == null){log.warn("You must input a new value");return false;}else{}
-	if(variable != "port"){log.warn("That config variable does not exist");return false;}else{}
 		fs.readFile("config.js", 'utf8', function (err,data) {
 		  if (err) {
 			return log.warn(err);
@@ -58,7 +57,19 @@ function configs(variable, value){
 }
 
 function help(){
-	log.help("You can run the following commands: stop, help, getip, config");
+	log.help("You can run the following commands: stop, help, getip, config, license, credits");
+}
+
+function license(){
+	console.log("Webserver written by: Matthew Foulks (http://www.notelek.com)");
+	console.log("Nodify by Matthew Foulks is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.");
+	console.log("Based on a work at https://github.com/mfoulks3200/nodejswebserver/");
+	console.log("NodeJS by: Joyent Inc. (http://nodejs.org/)");
+}
+
+function credits(){
+	console.log("Webserver written by: Matthew Foulks (http://www.notelek.com)");
+	console.log("NodeJS by: Joyent Inc. (http://nodejs.org/)");
 }
 
 function listen(){
@@ -74,6 +85,12 @@ function listen(){
 			getlocalip();
 		}else if(n[0] == "config"){
 			configs(n[1], n[2]);
+		}else if(answer == "license"){
+			license();
+		}else if(answer == "credits"){
+			credits();
+		}else if(answer == "uptime"){
+			server.getUptime();
 		}else{
 			log.warn("Command: " + answer + " is not a command");
 		}

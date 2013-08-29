@@ -1,6 +1,7 @@
 var http = require("http");
 var log = require("./log");
 var fs = require('fs');
+var config = require('./config');
 var url = require("url");
 var path = require('path');
 var mod = require('./mod');
@@ -50,8 +51,24 @@ function start(port) {
 	http.createServer(onRequest).listen(port);
 	log.log("Started Listening");
 	commands.listen();
-	setInterval(function(){uptime++;}, 36000000);
-	setInterval(function(){log.log("Uptime (Hours): "+uptime);}, 36000000);
+	setInterval(function(){uptime++;}, 1000);
+	setInterval(getUptime, config.uptime);
+}
+
+function getUptime(){
+	var muptime = Math.floor(uptime / 60);
+	var huptime = Math.floor(uptime / 36000);
+	var duptime = Math.floor(uptime / 8640000);
+	if(uptime >= 8640000){
+		log.log("Uptime: Days: "+duptime+" Hours: "+huptime+"Minutes: "+muptime+" Seconds: "+uptime);
+	}else if(uptime >= 36000){
+		log.log("Uptime: Hours: "+huptime+"Minutes: "+muptime+" Seconds: "+uptime);
+	}else if(uptime >= 60){
+		log.log("Uptime: Minutes: "+muptime+" Seconds: "+uptime);		
+	}else if(uptime >= 1){
+		log.log("Uptime: Seconds: "+uptime);
+	}
 }
 
 exports.start = start;
+exports.getUptime = getUptime;
