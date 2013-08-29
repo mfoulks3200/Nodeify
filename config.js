@@ -4,6 +4,6 @@
 //NodeJS by: Joyent Inc. (http://nodejs.org/)
 
 //this is the port the webserver runs on
-var port = 80;
+var port = 90;
 
 exports.port = port;
