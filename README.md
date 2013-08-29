@@ -1,4 +1,4 @@
-nodejswebserver
+Nodeify
 ===============
 You can see our fancy site over at http://mfoulks3200.github.io/nodejswebserver/
 
