@@ -10,7 +10,7 @@ var ctx;
 
 $(document).ready(function(){
 	
-	for(var i=0;i<$('#canvas').height()+$('#canvas').width()/5;i++){
+	for(var i=0;i<getRandomInt(20,30);i++){
 		ctx = $('#canvas')[0].getContext("2d");
 		ctx.fillStyle = "#8CC84B";
 		ctx.beginPath();
