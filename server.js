@@ -60,11 +60,11 @@ function getUptime(){
 	var huptime = Math.floor(uptime / 36000);
 	var duptime = Math.floor(uptime / 8640000);
 	if(uptime >= 8640000){
-		log.log("Uptime: Days: "+duptime+" Hours: "+huptime+"Minutes: "+muptime+" Seconds: "+uptime);
+		log.log("Uptime: Days: "+duptime+" Hours: "+(duptime-(duptime*8640000))+"Minutes: "+(muptime-(huptime*36000))+" Seconds: "+(uptime-(muptime*60)));
 	}else if(uptime >= 36000){
-		log.log("Uptime: Hours: "+huptime+"Minutes: "+muptime+" Seconds: "+uptime);
+		log.log("Uptime: Hours: "+huptime+"Minutes: "+(muptime-(huptime*36000))+" Seconds: "+(uptime-(muptime*60)));
 	}else if(uptime >= 60){
-		log.log("Uptime: Minutes: "+muptime+" Seconds: "+uptime);		
+		log.log("Uptime: Minutes: "+muptime+" Seconds: "+ (uptime-(muptime*60)));		
 	}else if(uptime >= 1){
 		log.log("Uptime: Seconds: "+uptime);
 	}
