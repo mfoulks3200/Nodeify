@@ -2604,3 +2604,15 @@
 [23:21:23 8/29/2013] [Log] Request for js\nodify.js from 127.0.0.1 fufilled
 [23:21:23 8/29/2013] [Log] Request for images\nodeify.png received from 127.0.0.1
 [23:21:23 8/29/2013] [Log] Request for images\nodeify.png from 127.0.0.1 fufilled
+[5:52:53 8/30/2013] [Log] Server has started
+[5:52:53 8/30/2013] [Log] Started Listening
+[5:52:55 8/30/2013] [Log] Request for index.html received from 127.0.0.1
+[5:52:55 8/30/2013] [Log] Request for index.html from 127.0.0.1 fufilled
+[5:52:56 8/30/2013] [Log] Request for bootstrap\css\bootstrap.css received from 127.0.0.1
+[5:52:56 8/30/2013] [Log] Request for bootstrap\css\bootstrap.css from 127.0.0.1 fufilled
+[5:52:56 8/30/2013] [Log] Request for css\flat-ui.css received from 127.0.0.1
+[5:52:56 8/30/2013] [Log] Request for js\nodify.js received from 127.0.0.1
+[5:52:56 8/30/2013] [Log] Request for js\nodify.js from 127.0.0.1 fufilled
+[5:52:56 8/30/2013] [Log] Request for js\nodify.js from 127.0.0.1 fufilled
+[5:52:56 8/30/2013] [Log] Request for images\nodeify.png received from 127.0.0.1
+[5:52:56 8/30/2013] [Log] Request for images\nodeify.png from 127.0.0.1 fufilled
