@@ -1,3 +1,5 @@
+//server.js
+//main function file
 var http = require("http");
 var log = require("./log");
 var fs = require('fs');
