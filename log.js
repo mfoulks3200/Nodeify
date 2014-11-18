@@ -1,3 +1,5 @@
+//log.js
+//log to file
 var fs = require("fs");
 var red, green, yellow, blue, magenta, cyan, white;
 red   = '\u001b[31m';
