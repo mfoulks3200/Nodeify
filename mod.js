@@ -1,3 +1,4 @@
+//added mod support
 module.exports = {
 	
 	check: function(file,input){
