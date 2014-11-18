@@ -1,3 +1,4 @@
+//config.js
 var log = require("./log");
 var server = require("./server");
 var readline = require('readline');
