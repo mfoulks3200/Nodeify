@@ -5,6 +5,8 @@
 //Based on a work at https://github.com/mfoulks3200/nodejswebserver/
 //NodeJS by: Joyent Inc. (http://nodejs.org/)
 
+//START CONFIGURATION
+
 //this is the port the webserver runs on
 var port = 80;
 exports.port = port;
