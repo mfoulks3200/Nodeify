@@ -1,4 +1,4 @@
 @echo off
-title Node.js Minimal Webserver
+title Node.js Webserver
 node index.js
 pause >nul
